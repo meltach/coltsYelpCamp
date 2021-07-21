@@ -95,7 +95,6 @@ module.exports.updateCampground = async (req, res) => {
 };
 module.exports.deleteCampground = async (req, res) => {
   const { id } = req.params;
-  console.log(req.body);
   await Campground.findByIdAndDelete(id);
   req.flash("success", "Successfully deleted!");
   res.redirect("/campgrounds");
